@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Insights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+    <div class="flex">
+       <h1>daily reflection</h1>
+      <input type="date" id="datePicker" class="date-picker" /> 
+    </div>
+      
+    </header>
+
+    <div class="dashboard-grid">
+      <!-- Productivity Gauge -->
+      <div class="card productivity-card">
+        <div class="section-title">productivity</div>
+        <div class="gauge-container">
+          <div class="gauge-bg">
+            <div class="gauge-fill" id="gaugeFill"></div>
+          </div>
+          <div class="gauge-score" id="score">—</div>
+        </div>
+        <div class="sentiment" id="sentiment">Loading...</div>
+      </div>
+
+      <!-- Activities -->
+      <div class="card activities-card">
+        <div class="section-title">activities overview</div>
+        <div class="activities-grid">
+          <div class="activity-item completed">
+            <div class="activity-label">✓ completed</div>
+            <div class="activity-content" id="completed">—</div>
+          </div>
+          <div class="activity-item missed">
+            <div class="activity-label">✗ missed</div>
+            <div class="activity-content" id="missed">—</div>
+          </div>
+          <div class="activity-item" style="grid-column: span 2;">
+            <div class="activity-label">reasons</div>
+            <div class="activity-content" id="reasons">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Journal Entry -->
+      <div class="card journal-card">
+        <div class="section-title">what you wrote</div>
+        <div class="journal-content loading" id="formResponse">Loading your reflection...</div>
+      </div>
+
+      <!-- Bhagavad Gita -->
+      <div class="card gita-card">
+        <div class="section-title">bhagavad gita</div>
+        <div class="gita-header" id="gitaHeader">Chapter —, Verse —</div>
+        <div class="gita-verse">
+          <div class="gita-sanskrit" id="shloka">—</div>
+          <div class="gita-translation" id="translation">—</div>
+        </div>
+        <div class="gita-reasoning" id="reasoning">—</div>
+      </div>
+
+      <!-- Krishna's Message -->
+      <div class="card krishna-card">
+        <div class="section-title">krishna says</div>
+        <div class="krishna-message" id="krishnaMessage">—</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

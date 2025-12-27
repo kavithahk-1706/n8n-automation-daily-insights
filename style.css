@@ -1,0 +1,317 @@
+
+    :root {
+      --bg-color: #0a0e1a;
+      --card-bg: #1a1f35;
+      --card-hover: #252b45;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+      --accent-gold: #fbbf24;
+      --accent-blue: #38bdf8;
+      --accent-green: #34d399;
+      --accent-red: #f87171;
+      --border-radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      color: var(--accent-gold);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: lowercase;
+      letter-spacing: -1px;
+    }
+
+    .date-picker {
+      background: var(--card-bg);
+      border: 2px solid var(--accent-blue);
+      color: var(--text-main);
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .date-picker:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(56, 189, 248, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .productivity-card {
+      grid-column: span 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gauge-container {
+      position: relative;
+      width: 200px;
+      height: 120px;
+      margin: 1rem 0;
+    }
+
+    .gauge-bg {
+      width: 200px;
+      height: 100px;
+      border-radius: 100px 100px 0 0;
+      background: rgba(56, 189, 248, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gauge-fill {
+      width: 200px;
+      height: 100px;
+      border-radius: 100px 100px 0 0;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), var(--accent-green));
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform-origin: center bottom;
+      transition: transform 1s ease-out;
+    }
+
+    .gauge-score {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -10%);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      z-index: 10;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .sentiment {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      font-style: italic;
+      text-align: center;
+    }
+
+    .activities-card {
+      grid-column: span 8;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .activity-item {
+      background: rgba(56, 189, 248, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-blue);
+    }
+
+    .activity-item.completed {
+      border-left-color: var(--accent-green);
+    }
+
+    .activity-item.missed {
+      border-left-color: var(--accent-red);
+    }
+
+    .activity-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .activity-content {
+      color: var(--text-main);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .journal-card {
+      grid-column: span 12;
+    }
+
+    .journal-content {
+      margin-top: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-dim);
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .journal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .journal-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    .journal-content::-webkit-scrollbar-thumb {
+      background: var(--accent-blue);
+      border-radius: 4px;
+    }
+
+    .gita-card {
+      grid-column: span 7;
+      border-left: 4px solid var(--accent-gold);
+    }
+
+    .gita-header {
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .gita-verse {
+      background: rgba(251, 191, 36, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    .gita-sanskrit {
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      white-space: pre-line;
+    }
+
+    .gita-translation {
+      color: var(--text-main);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.6;
+      border-left: 3px solid var(--accent-gold);
+      padding-left: 1rem;
+    }
+
+    .gita-reasoning {
+      margin-top: 1rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .krishna-card {
+      grid-column: span 5;
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(56, 189, 248, 0.1));
+      border: 2px solid var(--accent-gold);
+    }
+
+    .krishna-message {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      background: rgba(251, 191, 36, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-gold);
+      font-style: italic;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-blue);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .loading {
+      opacity: 0.5;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.8; }
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-grid > * {
+        grid-column: span 12 !important;
+      }
+
+      .activities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .flex{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
