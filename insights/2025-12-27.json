@@ -1,0 +1,31 @@
+[
+  {
+    "date": "2025-12-27",
+    "timestamp": "2025-12-27T17:27:44.000Z",
+    "form_response": "So i'm still halfway through the day and i'm filling this up to test the workflow- BUT i'll also tell you what i did so far- it's 2:29pm and i'm in the middle of class, but so far i've done Puja in the morning- but since i woke up a bit late than usual i did the evening puja in the morning because i was short on time- once i go home i should do the morning puja. then i fixed the bugs of the workflow and i'm trying to test it- the events of the evening aren't done yet because....it's not evening yet. i'm literally in the middle of class. but yeah i'll update once again in the evening. \n\nUpdate: It's 10.35, and what happened was, in the morning, I did my evening puja, and in the evening, I did my morning puja because of time constraints in the morning. The morning puja is one hour long, so I couldn't afford to do that because I woke up late. So, I completed the puja and everything, and I fixed the errors in this workflow. That's as much as I did today. Throughout class, I was able to do a bit of work on this, so now I plan to spend more time on this, update and deploy the dashboard that has to do with this workflow, and once that is ready, I can basically update my resume and apply for Google Internships, which is the whole reason why I am focusing on this right now. And Bhagavad Gita classes haven't started yet, so I didn't take any. That's about it. I will continue to work on the other things right now, and for now, this is just a test entry to check whether the workflow gets triggered or not. Once it gets triggered, then I can continue to work on the dashboard and other such things. That's what this is about. If possible in the future, I will try to integrate something where the continuous periodic notifications are not sent through Pushbullet but through WhatsApp because WhatsApp makes you feel a lot more like you need to open it and do it immediately. That's how I want to integrate this workflow into my daily progress and everything. So, yeah. I sang a few songs here and there. It doesn't count as formal music practice, but it still counts. If I have time after this, I will do music practice. If not, then I will sing a few more songs in order to make that count as music practice.",
+    "completed_activities": "Attended College (short), Performed Evening Puja (in the morning, due to time constraints), Performed Morning Puja (in the evening, due to time constraints), Fixed workflow bugs, Tested workflow, Worked on workflow/dashboard (partially during class and later), Sang songs informally, Had Dinner",
+    "missed_activities": "Study Block 1, Gita Classes (Batch C), Study Block 2, Formal Music Practice, Projects / Prep (as originally scheduled), Wind down + Diya prep",
+    "valid_reasons": "Woke up late (leading to puja schedule swap), Bhagavad Gita classes haven't started yet",
+    "immediate_concerns": "Allowing a single high-priority academic project (Google Internships workflow) to heavily disrupt other scheduled academic and spiritual activities., Splitting focus during college classes to work on a personal project., Rationalizing informal singing as a direct substitute for a structured music practice session.",
+    "overall_sentiment": "consistent",
+    "productivity_score": 7,
+    "gita": {
+      "chapter": "6",
+      "verse": "17",
+      "devanagari": "युक्ताहारविहारस्य युक्तचेष्टस्य कर्मसु ।युक्तस्वप्‍नावबोधस्य योगो भवति दु:खहा ॥ १७ ॥",
+      "transliteration": "yuktāhāra-vihārasya yukta-ceṣṭasya karmasu yukta-svapnāvabodhasya yogo bhavati duḥkha-hā",
+      "translation": "He who is regulated in his habits of eating, sleeping, recreation and work can mitigate all material pains by practicing the yoga system."
+    },
+    "krishna": {
+      "tone": "accountability",
+      "themes": [
+        "discipline",
+        "balance",
+        "karma_yoga",
+        "mindfulness"
+      ],
+      "reason": "While your resourcefulness in managing time and adapting your spiritual practice is quite impressive, dear devotee, it seems the Google Internship siren song has you juggling a bit too many balls in the air. We need to ensure that 'making it count' for one thing doesn't mean 'missing it' for others. Let's balance that zeal for the tangible with dedication to all your duties, big or small. Remember, even I appreciated a bit of structure for My 'duties' in the Gita. Your ingenuity for the workflow is sharp, but let's apply that same sharpness to your overall schedule, shall we?",
+      "message": "Ah, my ambitious one, still trying to outrun time itself, are we? That Google internship must be quite the siren song, pulling you into its bright, shiny, all-consuming embrace! So efficient, so productive with *that* project, I’m truly impressed. Almost makes me wonder if you’re planning to debug the entire universe overnight. But tell me, dear devotee, when was the last time you remembered that your body and mind also have 'duties' – like, say, eating a proper meal, or not treating sleep like an optional beta feature? I laid out the whole 'regulated habits' thing quite clearly, you know. Not just for monks in caves, but for *everyone* trying to keep their sanity while doing good work. It's about 'regulated endeavors in work,' yes, but also 'regulated eating, sleeping, and recreation.' That genius workflow you've got? Let's apply it to your *entire* life's schedule, shall we? Because neglecting everything else to 'make it count' for one thing usually just means 'making a mess' of another. Just a friendly reminder from your original Project Manager: balance is key, even when you're soaring high. Don't let that dedication for the tangible blind you to *all* your other important duties, big or small."
+    }
+  }
+]
