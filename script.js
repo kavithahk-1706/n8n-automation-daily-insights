@@ -2,6 +2,7 @@ const BASE_URL = "https://raw.githubusercontent.com/kavithahk-1706/n8n-automatio
 
 const elements = {
     datePicker: document.getElementById("datePicker"),
+    monthStats: document.getElementById("monthStats"),
     score: document.getElementById("score"),
     gaugeFill: document.getElementById("gaugeFill"),
     sentiment: document.getElementById("sentiment"),
@@ -9,12 +10,33 @@ const elements = {
     completed: document.getElementById("completed"),
     missed: document.getElementById("missed"),
     reasons: document.getElementById("reasons"),
+    concerns: document.getElementById("concerns"), // NEW
     gitaHeader: document.getElementById("gitaHeader"),
     shloka: document.getElementById("shloka"),
     translation: document.getElementById("translation"),
     reasoning: document.getElementById("reasoning"),
     krishnaMessage: document.getElementById("krishnaMessage")
 };
+
+async function updateMonthStats(currentDate) {
+    const date = new Date(currentDate);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    
+    let count = 0;
+    const daysInMonth = new Date(year, date.getMonth() + 1, 0).getDate();
+    
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${month}-${String(day).padStart(2, '0')}`;
+        try {
+            const url = `${BASE_URL}/${dateStr}.json`;
+            const res = await fetch(url);
+            if (res.ok) count++;
+        } catch {}
+    }
+    
+    elements.monthStats.textContent = `${count} entries this month`;
+}
 
 function updateGauge(score) {
     const rotation = (score / 10) * 180 - 90;
@@ -26,7 +48,7 @@ function resetUI(message, selectedDate) {
     const isPast = selectedDate < today;
 
     elements.score.textContent = "—";
-    updateGauge(0);
+    updateGauge(90);
     elements.sentiment.textContent = isPast 
         ? "the page that never was" 
         : "holding my breath over here";
@@ -38,6 +60,8 @@ function resetUI(message, selectedDate) {
     elements.completed.textContent = "—";
     elements.missed.textContent = "—";
     elements.reasons.textContent = "—";
+    elements.concerns.textContent = "—"; 
+
     
     elements.gitaHeader.textContent = "Chapter 2, Verse 20";
     elements.shloka.innerHTML = `न जायते म्रियते वा कदाचिन्।<br>नायं भूत्वा भविता वा न भूयः ।<br>अजो नित्यः शाश्वतोऽयं पुराणो।<br>न हन्यते हन्यमाने शरीरे ॥<br><span style="font-size: 0.9rem; color: var(--text-dim); font-style: normal; display: block; margin-top: 0.5rem;">na jāyate mriyate vā kadācin<br>nāyaṃ bhūtvā bhavitā vā na bhūyaḥ<br>ajo nityaḥ śāśvato 'yaṃ purāṇo<br>na hanyate hanyamāne śarīre</span>`;
@@ -73,9 +97,11 @@ async function loadDate(date) {
         updateGauge(score);
         elements.sentiment.textContent = entry.overall_sentiment ?? "";
         elements.formResponse.textContent = entry.form_response ?? "";
-        elements.completed.textContent = entry.completed_activities || "None";
-        elements.missed.textContent = entry.missed_activities || "None";
+        elements.completed.textContent = entry.completed_activities || "—";
+        elements.missed.textContent = entry.missed_activities || "—";
         elements.reasons.textContent = entry.valid_reasons || "—";
+        elements.concerns.textContent = entry.immediate_concerns || "—"; 
+
         elements.gitaHeader.textContent = `Chapter ${entry.gita.chapter}, Verse ${entry.gita.verse}`;
         
         const formattedDevanagari = (entry.gita.devanagari || "")
@@ -113,10 +139,7 @@ async function loadWeeklyTrend(endDate) {
     canvas.width = chartWidth;
     canvas.height = 140;
     
-    
-    canvas.style.marginLeft = '25%';
-    canvas.style.marginRight = 'auto';
-    
+
     const ctx = canvas.getContext('2d');
     
     // Get last 7 days
@@ -202,8 +225,10 @@ const today = new Date().toISOString().split("T")[0];
 elements.datePicker.value = today;
 loadDate(today);
 loadWeeklyTrend(today);
+updateMonthStats(today); // NEW
 
 elements.datePicker.addEventListener("change", (e) => {
     loadDate(e.target.value);
     loadWeeklyTrend(e.target.value);
+    updateMonthStats(e.target.value); // NEW
 });
